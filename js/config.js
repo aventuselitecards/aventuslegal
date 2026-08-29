@@ -3,12 +3,16 @@ window.AVENTUS = {
   person: "Rosie Avalos",
   titles: "Contract Paralegal · Consultant · LDA #24-046",
   lda: "LDA #24-046",
-  phone: "209-658-2395",
-  phoneHref: "tel:+12096582395",
+  county: "Merced County",
+  phone: "209-233-0380",
+  phoneHref: "tel:+12092330380",
   email: "contact@aventuslegal.com",
+  instagram: "https://www.instagram.com/aventuslegal209/",
+  slogan: "Plan Today. Protect Tomorrow.",
   bilingual: true,
   gavel: {
     portal: "https://aventuslegal.gavel.io",
+    enabled: false,
     workflows: []
   }
 };
