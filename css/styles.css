@@ -1,7 +1,7 @@
 :root {
-  --ink: #070b12;
+  --ink: #0b1730;
   --navy: #0b1730;
-  --navy-2: #122445;
+  --navy-2: #10203c;
   --gold: #c9a46c;
   --gold-2: #e8d7b0;
   --paper: #f4f0e8;
@@ -39,7 +39,7 @@ a { color: inherit; text-decoration: none; }
 header.nav {
   position: sticky; top: 0; z-index: 10;
   backdrop-filter: blur(16px);
-  background: rgba(7, 11, 18, 0.78);
+  background: rgba(11, 23, 48, 0.92);
   border-bottom: 1px solid var(--line);
 }
 .nav-inner {
@@ -83,7 +83,7 @@ header.nav {
   position: absolute; inset: 0;
   background:
     radial-gradient(900px 420px at 80% -10%, rgba(201,164,108,0.16), transparent 55%),
-    radial-gradient(700px 400px at 0% 80%, rgba(18,36,69,0.9), transparent 60%);
+    radial-gradient(700px 400px at 0% 80%, rgba(11,23,48,0.95), transparent 60%);
   pointer-events: none;
 }
 .hero-grid {
@@ -146,7 +146,7 @@ h1 {
 }
 .portrait-badge {
   position: absolute; left: 18px; bottom: 18px;
-  background: rgba(7,11,18,0.78);
+  background: rgba(11, 23, 48, 0.78);
   border: 1px solid var(--line);
   backdrop-filter: blur(10px);
   padding: 10px 14px;
@@ -259,7 +259,7 @@ h2 {
 label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
 input, textarea, select {
   width: 100%;
-  background: rgba(7,11,18,0.5);
+  background: rgba(11, 23, 48, 0.55);
   border: 1px solid var(--line);
   color: var(--text);
   border-radius: 12px;
