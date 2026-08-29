@@ -10,7 +10,8 @@
       "Legal and project support for teams that move fast.":
         "Apoyo legal y de proyectos para equipos que avanzan rápido.",
       "Start documents": "Iniciar documentos",
-      "Call Rosie": "Llamar a Rosie"
+      "Call Rosie": "Llamar a Rosie",
+      "Work with Aventus": "Trabajar con Aventus"
     }
   };
   let lang = "en";
@@ -30,11 +31,22 @@
   const flows = (A.gavel && A.gavel.workflows) || [];
   const portal = A.gavel && A.gavel.portal;
   if (!flows.length && !portal) {
-    grid.innerHTML = '<div class="card"><h3>Gavel intake</h3><p>Document interviews will open here.</p></div>';
+    grid.innerHTML = `
+      <div class="card">
+        <h3>Gavel intake</h3>
+        <p>Document interviews will open here. Call or email to start in the meantime.</p>
+        <p class="fine">Add workflow links in js/config.js (Copy workflow link in Gavel).</p>
+      </div>`;
     return;
   }
   const items = [];
-  if (portal) items.push({ title: "Client portal", blurb: "Sign in or start a workflow.", url: portal });
+  if (portal) {
+    items.push({ title: "Client portal", blurb: "Sign in to continue a matter.", url: portal });
+  }
   flows.forEach((f) => items.push(f));
-  grid.innerHTML = items.map((f) => '<a class="card" href="'+f.url+'" target="_blank" rel="noopener"><h3>'+f.title+'</h3><p>'+(f.blurb||"Start this workflow.")+'</p></a>').join("");
+  grid.innerHTML = items.map((f) => `
+    <a class="card" href="${f.url}" target="_blank" rel="noopener">
+      <h3>${f.title}</h3>
+      <p>${f.blurb || "Start this Gavel workflow."}</p>
+    </a>`).join("");
 })();
