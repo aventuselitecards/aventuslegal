@@ -26,6 +26,14 @@
     });
   }
 
+  const payNow = document.querySelector("#pay-now");
+  if (payNow && A.payment && A.payment.link) {
+    payNow.href = A.payment.link;
+    payNow.textContent = "Pay by card";
+    payNow.target = "_blank";
+    payNow.rel = "noopener";
+  }
+
   const grid = document.querySelector("[data-gavel]");
   if (!grid) return;
   const flows = (A.gavel && A.gavel.workflows) || [];

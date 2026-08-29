@@ -14,5 +14,9 @@ window.AVENTUS = {
     portal: "https://aventuslegal.gavel.io",
     enabled: false,
     workflows: []
+  },
+  payment: {
+    link: "",
+    note: "Paste a Stripe Payment Link here when Rosie has Stripe."
   }
 };

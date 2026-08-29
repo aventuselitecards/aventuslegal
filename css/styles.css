@@ -290,3 +290,17 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+.hero-logo {
+  max-width: 440px;
+  margin-left: auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  background: #0b1730;
+}
+.hero-logo img { width: 100%; height: auto; display: block; object-fit: contain; }
+.cards.two { grid-template-columns: 1fr; }
+@media (min-width: 700px) { .cards.two { grid-template-columns: 1fr 1fr; } }
+.amount-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
