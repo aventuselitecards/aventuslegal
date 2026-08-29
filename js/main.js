@@ -1,4 +1,37 @@
 (function () {
+  const intake = document.querySelector("#attorney-intake");
+  if (intake) {
+    intake.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(intake);
+      const areas = fd.getAll("area").join(", ") || "(none)";
+      const lines = [
+        "Attorney contract request",
+        "",
+        "Name: " + fd.get("attorney"),
+        "Firm: " + fd.get("firm"),
+        "Email: " + fd.get("email"),
+        "Phone: " + fd.get("phone"),
+        "",
+        "License state: " + fd.get("bar_state"),
+        "Bar / license #: " + fd.get("bar_number"),
+        "Status: " + fd.get("bar_status"),
+        "Year licensed: " + (fd.get("licensed_year") || ""),
+        "",
+        "Contract type: " + fd.get("contract_type"),
+        "Practice areas: " + areas,
+        "Start: " + (fd.get("start") || ""),
+        "Hours/budget: " + (fd.get("hours") || ""),
+        "",
+        "Scope:",
+        fd.get("scope") || ""
+      ];
+      const addr = (window.AVENTUS && window.AVENTUS.email) || "ravalos@aventuslegalservices.com";
+      const href = "mailto:" + addr + "?subject=" + encodeURIComponent("Attorney contract: " + fd.get("firm")) + "&body=" + encodeURIComponent(lines.join("\n"));
+      window.location.href = href;
+    });
+  }
+
   const A = window.AVENTUS || {};
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();
